@@ -34,21 +34,6 @@
 
 / {
     input_processors {
-         // XYスケーラーと一緒に使う
-        deadzone_filter: deadzone_filter {
-              compatible = "zmk,input-processor-scaler";
-              #input-processor-cells = <2>;
-              type = <INPUT_EV_REL>;
-              codes = <INPUT_REL_X INPUT_REL_Y>;
-              multiplier = <0>; // 0倍にする＝挙動を打ち消す
-              divisor = <800>; // 800以下を0出力に
-              track-remainders;
-        };
-
-     &trackball_listener {
-        input-processors = <&deadzone_filter>; // ベース層に適用
-        sensor-bindings = <&mouse_mv X Y>;     // ご自身のセンサー設定に合わせて
-
         // 垂直スクロールのスケーラー
 
         zip_wheel_scaler: zip_wheel_scaler {
