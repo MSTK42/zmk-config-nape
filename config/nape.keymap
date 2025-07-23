@@ -54,15 +54,13 @@
             track-remainders;
         };
 
-        cursor_deadzone_scaler: cursor_deadzone_scaler {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_X INPUT_REL_Y>;
-            scale-numerator = <1>;
-            scale-denominator = <8>;
-            track-remainders;
-        };
+    cursor_deadzone_scaler: cursor_deadzone_scaler {
+        compatible = "zmk,input-processor-deadzone";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
+        deadzone-threshold = <5>; // お好みで調整
+            };
     };
 };
 
