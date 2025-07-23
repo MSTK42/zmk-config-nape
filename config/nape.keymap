@@ -53,6 +53,16 @@
             codes = <INPUT_REL_HWHEEL>;
             track-remainders;
         };
+
+        cursor_deadzone_scaler: cursor_deadzone_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>;
+            scale-numerator = <1>;
+            scale-denominator = <8>;
+            track-remainders;
+        };
     };
 };
 
@@ -223,18 +233,6 @@
 };
 
 / {
-    input_processors {
-    zip_xy_scaler: cursor_deadzone_scaler {
-        compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <2>;
-        type = <INPUT_EV_REL>;
-        codes = <INPUT_REL_X INPUT_REL_Y>;
-        scale-numerator = <1>;
-        scale-denominator = <8>;
-        track-remainders;
-        };
-    };
-
     input_listeners {
         trackball_listener: trackball_listener {
             compatible = "zmk,input-listener";
