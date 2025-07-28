@@ -19,7 +19,6 @@
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
     };
- };
 
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-direct";
