@@ -14,9 +14,10 @@
             sensor-bindings = <&mouse_mv X Y>;
             input-processors = <&cursor_deadzone_scaler>;
 
-        scroller {
-            layers = <10>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
+            scroller {
+                layers = <10>;
+                input-processors = <&zip_xy_to_scroll_mapper>;
+            };
         };
     };
 
