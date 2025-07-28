@@ -11,7 +11,7 @@
         trackball_listener: trackball_listener {
             compatible = "zmk,input-listener";
             device = <&trackball>;
-            sensor-bindings = <&mouse_mv X Y>;
+            sensor-bindings = <&mouse_mv SCRL_UP SCRL_DOWN>;
             input-processors = <&cursor_deadzone_scaler>;
 
             scroller {
