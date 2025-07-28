@@ -230,13 +230,11 @@
     };
 };
 
-/ {
-    input_listeners {
-        trackball_listener: trackball_listener {
-            compatible = "zmk,input-listener";
-            sensor-bindings = <&mouse_mv X Y>;
-            input-processors = <&cursor_deadzone_scaler>;
-            device = <&pmw3610>;
-        };
+/input_listeners {
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>; // ← 新しく定義された pmw3610 に対応
+        input-processors = <&cursor_deadzone_scaler>;
+        sensor-bindings = <&mouse_mv X Y>;
     };
 };
