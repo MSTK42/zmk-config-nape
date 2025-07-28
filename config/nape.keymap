@@ -236,6 +236,7 @@
             compatible = "zmk,input-listener";
             sensor-bindings = <&mouse_mv X Y>;
             input-processors = <&cursor_deadzone_scaler>;
+            device = <&pmw3610>;
         };
     };
 };
