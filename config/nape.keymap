@@ -97,7 +97,21 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-    };
+
+        cpy: tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mkp MB1>, <&kp RC(C)>, <&kp RC(X)>;
+        };
+
+        pst: tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mkp MB2>, <&kp RC(V)>, <&kp RC(LS(V))>;
+        };
+ };
 
     // キーマップの定義
 
@@ -108,7 +122,7 @@
 
         orientation0_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &pst  &cpy  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -116,7 +130,7 @@
 
         orientation45_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &pst  &cpy  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -124,7 +138,7 @@
 
         orientation90_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &pst  &cpy  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -132,7 +146,7 @@
 
         orientation135_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &pst  &cpy  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -140,7 +154,7 @@
 
         orientation180_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &pst  &cpy  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -148,7 +162,7 @@
 
         orientation225_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &pst  &cpy  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -156,7 +170,7 @@
 
         orientation270_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &pst  &cpy  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -164,7 +178,7 @@
 
         orientation315_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB3  &pst  &cpy  &mo 8  &mo 9  &mo 11
             >;
         };
 
