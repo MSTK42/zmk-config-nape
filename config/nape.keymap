@@ -98,14 +98,14 @@
             tapping-term-ms = <200>;
         };
 
-        cpy: tap_dance {
+        cpy: tap_dance_cpy {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mkp MB1>, <&kp RC(C)>, <&kp RC(X)>;
         };
 
-        pst: tap_dance {
+        pst: tap_dance_pst {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
