@@ -10,8 +10,11 @@ manifest:
       url-base: https://github.com/kumamuk-git
     - name: inorichi
       url-base: https://github.com/inorichi
+    - name: kot149
+      url-base: https://github.com/kot149
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -26,5 +29,6 @@ manifest:
     - name: zmk-mouse-gesture
       remote: kot149
       revision: v1
+
   self:
     path: config
