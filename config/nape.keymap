@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/mouse.h>
+#include <mouse-gesture.dtsi>
 
 // マウス移動とスクロールのデフォルト値を設定
 
@@ -104,15 +105,15 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // レイヤー0（0°、USBポートを下向きにした状態）"
+        // レイヤー0
 
         Layer0 {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &trans
+&lt_mkp 11 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &trans
             >;
         };
 
-        // レイヤー1（時計回り45°）
+        // レイヤー1
 
         Layer1 {
             bindings = <
@@ -120,7 +121,7 @@
             >;
         };
 
-        // レイヤー2（時計回り90°）
+        // レイヤー2
 
         Layer2 {
             bindings = <
@@ -128,7 +129,7 @@
             >;
         };
 
-        // レイヤー3（時計回り135°）
+        // レイヤー3
 
         Layer3 {
             bindings = <
@@ -136,7 +137,7 @@
             >;
         };
 
-        // レイヤー4（時計回り180°）
+        // レイヤー4
 
         Layer4 {
             bindings = <
@@ -144,7 +145,7 @@
             >;
         };
 
-        // レイヤー5（時計回り225°）
+        // レイヤー5
 
         Layer5 {
             bindings = <
@@ -152,7 +153,7 @@
             >;
         };
 
-        // レイヤー6（時計回り270°）
+        // レイヤー6
 
         Layer6 {
             bindings = <
@@ -160,7 +161,7 @@
             >;
         };
 
-        // レイヤー7（時計回り315°）
+        // レイヤー7
 
         Layer7 {
             bindings = <
@@ -190,16 +191,15 @@
             bindings = <
 &mkp MB3  &mkp MB4  &mkp MB5  &trans  &trans  &trans
             >;
-
-            // トラックボールの動きをスクロールに変換
-
-            sensor-bindings =
-                <&mouse_scrl SCRL_DOWN SCRL_UP>,
-                <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
-        // レイヤー11（使用向き選択レイヤー）
-    };
+        // レイヤー11（ジェスチャーレイヤー）
+
+        gesture_layer {
+            bindings = <
+&mouse_gesture  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
 };
 
 / {
@@ -208,7 +208,7 @@
 
         // Key1、2同時押しでスクロールレイヤーへ
 
-        combo_layer9 {
+        combo_layer10 {
             bindings = <&mo 10>;
             key-positions = <1 2>;
             timeout-ms = <50>;
