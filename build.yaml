@@ -20,4 +20,4 @@
 ---
 include:
   - board: xiao_ble
-    shield: nape rgbled_adapter
+    shield: nape
