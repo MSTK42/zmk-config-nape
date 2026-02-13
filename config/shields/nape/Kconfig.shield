@@ -1,2 +1,2 @@
-config NAPE
+config SHIELD_NAPE
     def_bool $(shields_list_contains,nape)
