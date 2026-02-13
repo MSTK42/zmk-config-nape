@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
+#include <mouse-gesture.dtsi>
 
 / {
     chosen {
@@ -47,12 +48,36 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
         scroller {
             layers = <10>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
+
+        gestures {
+            layers = <11>;
+            input-processors = <&zip_mouse_gesture>;
+        };
     };
 };
+
+
+&zip_mouse_gesture {
+    stroke-size = <280>;
+    enable-eager-mode;
+    gesture-cooldown-ms = <800>;
+
+    back {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+
+    forward {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(RIGHT)>;
+    };
+};
+
 
 &pinctrl {
     spi0_default: spi0_default {
