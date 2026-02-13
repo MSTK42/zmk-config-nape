@@ -69,12 +69,12 @@
 
     back {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LA(LEFT)>;
+        bindings = <&kp LALT LEFT>;
     };
-
+    
     forward {
         pattern = <GESTURE_LEFT>;
-        bindings = <&kp LA(RIGHT)>;
+        bindings = <&kp LALT RIGHT>;
     };
 };
 
