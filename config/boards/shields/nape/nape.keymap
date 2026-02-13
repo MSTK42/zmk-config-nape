@@ -1,8 +1,6 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <mouse-gesture.dtsi>
 
-// マウス移動とスクロールのデフォルト値を設定
-
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 800
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
@@ -13,30 +11,22 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// マウス移動の設定
-
 &mmv {
-    delay-ms = <0>;              // 遅延なし
-    trigger-period-ms = <10>;    // 10ミリ秒ごとにトリガー
-    time-to-max-speed-ms = <0>;  // 即座に最大速度に
-    acceleration-exponent = <1>;  // 線形加速
+    delay-ms = <0>;
+    trigger-period-ms = <10>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <1>;
 };
-
-// マウススクロールの設定
 
 &msc {
-    delay-ms = <0>;              // 遅延なし
-    trigger-period-ms = <10>;    // 10ミリ秒ごとにトリガー
-    time-to-max-speed-ms = <0>;  // 即座に最大速度に
-    acceleration-exponent = <0>;  // 加速なし
+    delay-ms = <0>;
+    trigger-period-ms = <10>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <0>;
 };
 
-// 入力プロセッサーの設定
-
-/ {
+ / {
     input_processors {
-        // 垂直スクロールのスケーラー
-
         zip_wheel_scaler: zip_wheel_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -44,8 +34,6 @@
             codes = <INPUT_REL_WHEEL>;
             track-remainders;
         };
-
-        // 水平スクロールのスケーラー
 
         zip_hwheel_scaler: zip_hwheel_scaler {
             compatible = "zmk,input-processor-scaler";
@@ -55,29 +43,19 @@
             track-remainders;
         };
     };
-};
 
-// カスタムビヘイビアの定義
-
-/ {
     behaviors {
-        // マウスカーソル移動の回転検出
-
         mouse_mv: mouse_cursor_move {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&mmv>, <&mmv>;
-
             tap-ms = <10>;
         };
-
-        // マウスホイールスクロールの回転検出
 
         mouse_scrl: mouse_wheel_scrl {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
-
             tap-ms = <10>;
         };
 
@@ -85,7 +63,6 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LT_MKP";
             bindings = <&mo>, <&mkp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -94,119 +71,55 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MOD_MKP";
             bindings = <&kp>, <&mkp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
     };
 
-    // キーマップの定義
-
     keymap {
         compatible = "zmk,keymap";
 
-        // レイヤー0
-
         Layer0 {
             bindings = <
-&lt_mkp 11 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &trans
+                &lt_mkp 11 MB3   &mkp MB2   &mkp MB1   &mo 8   &mo 9   &trans
             >;
         };
 
-        // レイヤー1
-
-        Layer1 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        // レイヤー2
-
-        Layer2 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        // レイヤー3
-
-        Layer3 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        // レイヤー4
-
-        Layer4 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        // レイヤー5
-
-        Layer5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        // レイヤー6
-
-        Layer6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        // レイヤー7
-
-        Layer7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        // レイヤー8（Bluetooth選択レイヤー）
+        Layer1 { bindings = < &trans &trans &trans &trans &trans &trans >; };
+        Layer2 { bindings = < &trans &trans &trans &trans &trans &trans >; };
+        Layer3 { bindings = < &trans &trans &trans &trans &trans &trans >; };
+        Layer4 { bindings = < &trans &trans &trans &trans &trans &trans >; };
+        Layer5 { bindings = < &trans &trans &trans &trans &trans &trans >; };
+        Layer6 { bindings = < &trans &trans &trans &trans &trans &trans >; };
+        Layer7 { bindings = < &trans &trans &trans &trans &trans &trans >; };
 
         btsel_layer {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &bt BT_SEL 3  &bt BT_SEL 4
+                &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans   &bt BT_SEL 3   &bt BT_SEL 4
             >;
         };
-
-        // レイヤー9（Bluetoothクリアレイヤー）
 
         btclr_layer {
             bindings = <
-&none  &none  &none  &bt BT_CLR  &none  &bt BT_CLR_ALL
+                &none &none &none   &bt BT_CLR   &none   &bt BT_CLR_ALL
             >;
         };
-
-        // レイヤー10（スクロールレイヤー）
 
         scroll_layer {
             bindings = <
-&mkp MB3  &mkp MB4  &mkp MB5  &trans  &trans  &trans
+                &mkp MB3   &mkp MB4   &mkp MB5   &trans   &trans   &trans
             >;
         };
-
-        // レイヤー11（ジェスチャーレイヤー）
 
         gesture_layer {
             bindings = <
-&mouse_gesture  &trans  &trans  &trans  &trans  &trans
+                &mouse_gesture   &trans   &trans   &trans   &trans   &trans
             >;
         };
-};
+    };
 
-/ {
     combos {
         compatible = "zmk,combos";
-
-        // Key1、2同時押しでスクロールレイヤーへ
 
         combo_layer10 {
             bindings = <&mo 10>;
