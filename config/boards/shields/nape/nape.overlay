@@ -51,6 +51,9 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+    
+        input-processors = <&zip_xy_scaler 4 1>;
+    
         scroller {
             layers = <10>;
             input-processors =
@@ -101,6 +104,6 @@
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
 
-        res-cpi = <800>;
+        res-cpi = <200>;
     };
 };
