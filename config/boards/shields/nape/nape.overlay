@@ -96,7 +96,5 @@
         zephyr,axis-y = <INPUT_REL_Y>;
 
         res-cpi = <800>;
-
-        scroll-layers = <10>;
     };
 };
