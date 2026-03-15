@@ -59,6 +59,7 @@
                 <&zip_scroll_scaler 1 16>;
         };
     };
+};
 
 &pinctrl {
     spi0_default: spi0_default {
