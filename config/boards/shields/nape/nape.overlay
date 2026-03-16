@@ -9,7 +9,7 @@
 / {
     chosen {
         zmk,kscan = &default_kscan;
-        zmk,physical-layout = &physical_layout0;
+        zmk,physical-layout = &nape_split_layout;
     };
 
     default_kscan: kscan {
@@ -46,6 +46,27 @@
         columns = <6>;
         map = <
             RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)
+        >;
+    };
+};
+
+/ {
+    nape_split_layout: physical_layout_split {
+        compatible = "zmk,physical-layout";
+        display-name = "Nape Split 3 Keys";
+        kscan = <&default_kscan>;
+        transform = <&nape_split_transform>;
+    };
+};
+
+
+/ {
+    nape_split_transform: nape_split_transform {
+        compatible = "zmk,matrix-transform";
+        rows = <1>;
+        columns = <11>;
+        map = <
+            RC(0,8) RC(0,9) RC(0,10)
         >;
     };
 };
