@@ -81,75 +81,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        slot0_layer {
+        base_layer {
             bindings = <
-                &lt_mkp SCROLL MB3  &mkp MB2  &mkp MB1  &mo BTSEL  &mo BTCLR  &mo SLOT_SEL
-            >;
-        };
-
-        slot1_layer {
-            bindings = <
-                &lt_mkp SCROLL MB3  &mkp MB2  &mkp MB1  &mo BTSEL  &mo BTCLR  &mo SLOT_SEL
-            >;
-        };
-
-        slot2_layer {
-            bindings = <
-                &lt_mkp SCROLL MB3  &mkp MB2  &mkp MB1  &mo BTSEL  &mo BTCLR  &mo SLOT_SEL
-            >;
-        };
-
-        slot3_layer {
-            bindings = <
-                &lt_mkp SCROLL MB3  &mkp MB2  &mkp MB1  &mo BTSEL  &mo BTCLR  &mo SLOT_SEL
-            >;
-        };
-
-        slot4_layer {
-            bindings = <
-                &lt_mkp SCROLL MB3  &mkp MB2  &mkp MB1  &mo BTSEL  &mo BTCLR  &mo SLOT_SEL
-            >;
-        };
-
-        slot5_layer {
-            bindings = <
-                &lt_mkp SCROLL MB3  &mkp MB2  &mkp MB1  &mo BTSEL  &mo BTCLR  &mo SLOT_SEL
-            >;
-        };
-
-        slot6_layer {
-            bindings = <
-                &lt_mkp SCROLL MB3  &mkp MB2  &mkp MB1  &mo BTSEL  &mo BTCLR  &mo SLOT_SEL
-            >;
-        };
-
-        slot7_layer {
-            bindings = <
-                &lt_mkp SCROLL MB3  &mkp MB2  &mkp MB1  &mo BTSEL  &mo BTCLR  &mo SLOT_SEL
-            >;
-        };
-
-        btsel_layer {
-            bindings = <
-                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &bt BT_SEL 3  &bt BT_SEL 4
-            >;
-        };
-
-        btclr_layer {
-            bindings = <
-                &none  &none  &none  &bt BT_CLR  &none  &bt BT_CLR_ALL
-            >;
-        };
-
-        scroll_layer {
-            bindings = <
-                &mkp MB3  &mkp MB4  &mkp MB5  &trans  &trans  &trans
-            >;
-        };
-
-        slot_select_layer {
-            bindings = <
-                &to SLOT_2  &to SLOT_4  &to SLOT_6  &to SLOT_0  &to SLOT_5  &trans
+                &lt 10 MB3  &mkp MB2  &mkp MB1
             >;
         };
     };
